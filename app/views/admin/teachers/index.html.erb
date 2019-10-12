@@ -1,0 +1,41 @@
+<%- if notice.present? %>
+  <p class="alert alert-success" id="notice"><%= notice %></p>
+<% end %>
+
+<h1><%= t('activerecord.models.teacher')%>列表</h1>
+
+<div class="row">
+  <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <%= link_to t('new'), new_admin_teacher_path, class: 'btn btn-success btn-fill pull-right' %>
+        </div>
+          <div class="content table-responsive table-full-width">
+              <table class="table table-hover table-striped">
+                  <thead>
+                    <th><%= Teacher.human_attribute_name(:name)%></th>
+                    <th><%= Teacher.human_attribute_name(:birthday)%></th>
+                    <th><%= Teacher.human_attribute_name(:introduction)%></th>
+                    <th><%= Teacher.human_attribute_name(:achievements)%></th>
+                    <th colspan="3"><%= t('actions')%></th>
+                  </thead>
+                  <tbody>
+                    <% @teachers.each do |teacher| %>
+                      <tr>
+                        <td><%= teacher.name %></td>
+                        <td><%= teacher.birthday %></td>
+                        <td><%= teacher.introduction %></td>
+                        <td><%= teacher.achievements %></td>
+                        <td><%= link_to t('show'), [:admin, teacher] %>
+                            <%= link_to t('edit'), edit_admin_teacher_path(teacher) %>
+                            <%= link_to t('destroy'), [:admin, teacher], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+              </table>
+
+          </div>
+      </div>
+  </div>
+</div>
+

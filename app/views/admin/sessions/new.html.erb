@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BoHai Backend</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
+  <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-pic js-tilt">
+          <%= image_tag('ora.jpg', size: '150x280')%>
+        </div>
+        <%= form_with url: admin_sessions_path, method: :post, class: 'login100-form validate-form', method: :post do |form| %>
+          <span class="login100-form-title">
+            管理员登录
+          </span>
+          <%- if flash[:danger].present?%>
+            <p class="p-t-12" style="color: #d92550"><%= flash[:danger].html_safe %></p>
+          <% end %>
+          
+          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <%= form.text_field :name , class: 'input100', placeholder: "用户名"%>
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate = "Password is required">
+            <%= form.password_field :password, class: 'input100',placeholder: "密码"  %>
+          </div>
+          
+          <div class="container-login100-form-btn">
+            <%= form.submit t('login'), class: 'login100-form-btn' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

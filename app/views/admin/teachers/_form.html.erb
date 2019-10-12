@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="content">
+    <%= form_for([:admin, teacher], local: true) do |form| %>
+      <% if teacher.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+          <ul>
+          <% teacher.errors.full_messages.each do |message| %>
+            <li class="alert alert-danger"><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :avatar %>
+            <%= form.file_field :avatar, class:'form-control' %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <%= image_tag teacher.avatar.attached? ? teacher.avatar : 'blank-avatar.png', class: "img-preview", style: 'width:150px; height: 150px;' %>
+        </div>
+        
+        <div class="col-md-5">
+          <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, class:'form-control' %>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="form-group">
+            <%= form.label :birthday %>
+            <%= form.text_field :birthday, class:'form-control' %>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="form-group">
+            <%= form.label :introduction %>
+            <%= form.text_area :introduction, class:'form-control' %>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="form-group">
+            <%= form.label :achievements %>
+            <%= form.text_area :achievements, class:'form-control' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit class: 'btn btn-primary btn-fill' %>
+        <%= link_to t('back'), admin_teachers_path, class: 'btn btn-primary btn-fill' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#teacher_birthday').datepicker({
+      language: "zh-CN"
+    });
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+            $('.img-preview').attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    $("#teacher_avatar").change(function() {
+      readURL(this);
+    });
+  })
+</script>    

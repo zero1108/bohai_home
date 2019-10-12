@@ -1,0 +1,54 @@
+<div class="sidebar" data-color="blue" data-image="<%= image_path('yahaha.jpg') %>" data-turbolinks="false">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="#" class="simple-text">
+                BoHai
+            </a>
+        </div>
+
+        <ul class="nav">
+            <li class="<%= controller_name == 'dashboard' ? 'active' : ''%>">
+                <%= link_to admin_root_path do %>
+                    <i class="pe-7s-graph"></i>
+                    <p><%=t('activerecord.models.dashboard')%></p>
+                <% end %>
+            </li>
+            <li class="<%= controller_name == 'teachers' ? 'active' : ''%>">
+                <%= link_to admin_teachers_path do %>
+                    <i class="pe-7s-user"></i>
+                    <p><%=t('activerecord.models.teacher')%></p>
+                <% end %>
+            </li>
+            <li class="<%= controller_name == 'news' ? 'active' : ''%>">
+                <%= link_to admin_news_index_path do %>
+                    <i class="pe-7s-note"></i>
+                    <p><%=t('activerecord.models.news')%></p>
+                <% end %>
+            </li>
+            <li class="<%= controller_name == 'contacts' ? 'active' : ''%>">
+                <%= link_to admin_contacts_path do %>
+                    <i class="pe-7s-bell"></i>
+                    <p><%=t('activerecord.models.contact')%></p>
+                <% end %>
+            </li>
+            <li class="<%= controller_name == 'courses' ? 'active' : ''%>">
+                <%= link_to admin_courses_path do %>
+                    <i class="pe-7s-science"></i>
+                    <p><%=t('activerecord.models.course')%></p>
+                <% end %>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+</script>

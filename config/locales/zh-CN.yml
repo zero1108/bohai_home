@@ -1,0 +1,85 @@
+zh-CN:
+  show: 详情
+  new: 新建
+  edit: 编辑
+  edit_password: 修改密码
+  destroy: 删除
+  back: 返回
+  save: 保存
+  login: 登录
+  actions: 操作
+  helpers:
+    submit:
+      create: "新建 %{model}"
+      submit: "保存 %{model}"
+      update: "更新 %{model}"
+      delete: "删除 %{model}"
+  action:
+    edit: 编辑
+    modify: 修改
+    update: 更新
+    submit: 提交
+  activerecord:
+    models:
+      teacher: 讲师
+      contact: 咨询
+      course: 课程
+      news: 新闻资讯
+      dashboard: 控制面板
+    attributes:
+      teacher:
+        name: 姓名
+        birthday: 出生日期
+        introduction: 介绍
+        achievements: 成就
+        avatar: 头像
+      course:
+        name: 名称
+        price: 价格
+        introduction: 介绍
+        position: 顺序
+        state: 状态
+      news:
+        title: 标题
+        content: 内容
+        state: 状态
+      contact:
+        phone: 联系电话
+        content: 内容
+        name: 称呼
+        grade: 日语水平
+        state: 状态
+    errors:
+      format: "%{attribute}%{message}"
+      messages:
+        blank: 不能为空
+        not_a_number: 不为数字
+        taken: 已存在
+        record_invalid: 数据有误
+  admin:
+    navigation:
+      groups: 
+        configuration: 系统与安全
+    breadcrumbs:
+      auth/administrators: 员工
+      articles: 文章
+    titles:
+      show: "%{model_name}详情"
+    buttons:
+      edit: "编辑%{model_name}"
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+      long: "%Y年%m月%d日(%a)"
+
+    day_names: [日曜日, 月曜日, 火曜日, 水曜日, 木曜日, 金曜日, 土曜日]
+    abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
+
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+    abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+
+    order:
+      - :year
+      - :month
+      - :day

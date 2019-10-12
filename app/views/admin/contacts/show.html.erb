@@ -1,0 +1,34 @@
+<h1><%= t('activerecord.models.contact') %><%= t('show') %></h1>
+
+<%- if notice.present? %>
+  <p class="alert alert-success" id="notice"><%= notice %></p>
+<% end %>
+
+<div class="card card-user">
+  <div class="content mx-auto">
+          <p>
+        <strong><%= contact.human_attribute_name(:email) %>:</strong>
+        <%= @contact.email %>
+      </p>
+          <p>
+        <strong><%= contact.human_attribute_name(:phone) %>:</strong>
+        <%= @contact.phone %>
+      </p>
+          <p>
+        <strong><%= contact.human_attribute_name(:content) %>:</strong>
+        <%= @contact.content %>
+      </p>
+    
+
+    <div class="actions text-center">
+      <%= link_to t('edit'), edit_admin_contact_path(@contact), class: 'btn btn-info btn-fill' %> |
+      <%= link_to t('back'), admin_contacts_path, class: 'btn btn-info btn-fill' %>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  p {
+    margin: 30px 0;
+  }
+</style>

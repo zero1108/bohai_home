@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BohaiHome</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+  <body>
+
+<div class="wrapper">
+    <%= render 'layouts/admin/sidebar' %>
+
+    <div class="main-panel">
+        <%= render 'layouts/admin/navbar' %>
+        <div class="content">
+            <div class="container-fluid">
+                <%= yield %>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <p class="copyright pull-right">
+                    &copy; 2019 <a href="#">Zero</a>, made with love for a better web
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</div>
+</body>
+</html>
