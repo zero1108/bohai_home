@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  get 'news', to: 'home#news'
-  get 'teachers', to: 'home#teachers'
+  # get 'news', to: 'home#news'
+  # get 'teachers', to: 'home#teachers'
+  # get 'courses', to: 'home#courses'
 
   resources :contacts, only: [:create]
   

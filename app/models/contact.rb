@@ -1,5 +1,5 @@
 class Contact < ApplicationRecord
-  validates :phone, phone: true
+  validates :phone, phone: true, presence: true
   validates_presence_of :content, :name
     
   acts_as_enum :state, %W(new dealed), %W(待处理 已处理)

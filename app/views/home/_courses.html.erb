@@ -1,0 +1,61 @@
+<h1 class="text-center text-uppercase text-white">课程介绍</h1>
+<div class="courses slider">
+  <% @courses.each_with_index do |course, index| %>
+	<div class="card">
+	  <h3><%= course.name%></h3>
+	  <div>参考价<span><%= course.price%></span></div>
+	  <div><%= course.introduction%></div>
+	</div>
+  <% end %>
+</div>
+
+<style type="text/css">
+	.card {
+		margin: 0 10px;
+		padding: 5px;
+	}
+
+	.slick-center {
+	    h3 {
+	    	font-weight: 500;
+	    }
+	}
+  .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out
+  }
+</style>
+
+<script type='text/javascript'>
+  	$(document).on('turbolinks:load', function(){
+  		$('.courses').slick({
+			centerMode: true,
+			centerPadding: '60px',
+			slidesToShow: 3,
+			// responsive: [
+			//     {
+			//       breakpoint: 768,
+			//       settings: {
+			//         arrows: false,
+			//         centerMode: true,
+			//         centerPadding: '40px',
+			//         slidesToShow: 3
+			//       }
+			//     },
+			//     {
+			//       breakpoint: 480,
+			//       settings: {
+			//         arrows: false,
+			//         centerMode: true,
+			//         centerPadding: '40px',
+			//         slidesToShow: 1
+			//       }
+			//     }
+			//   ]
+			});
+	  	});
+</script>

@@ -1,0 +1,51 @@
+<h1 class="text-center text-uppercase text-white">咨询</h1>
+<hr class="star-light mb-5">
+<%= form_for(@contact, remote: true) do |form| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li class="alert alert-danger"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, class:'form-control' %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= form.label :phone %>
+      <%= form.number_field :phone, class:'form-control' %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= form.label :grade %>
+      <%= form.select :grade, Contact.grade_collection, {}, class:'form-control' %>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= form.label :content %>
+      <%= form.text_area :content, class:'form-control' %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <%= form.submit '提交', class: 'btn btn-primary btn-fill' %>
+  </div>
+<% end %>
+
+<style type="text/css">
+  textarea {
+    height: 150px;
+  }
+</style>

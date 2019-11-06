@@ -4,12 +4,32 @@
     <title>BohaiHome</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <a href="https://pngtree.com/free-backgrounds"></a>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <div class="main-panel">
+        <%= render 'layouts/navbar' %>
+        <div class="content">
+          <div class="container-fluid">
+              <%= yield %>
+          </div>
+        </div>
+        <%= render 'layouts/footer' %>
+      </div>
+    </div>
   </body>
 </html>
+
+<style type="text/css">
+  .main-panel {
+    width: 100%;
+  }
+  .content {
+    margin-top: 60px;
+    padding-top: 120px;
+  }
+</style>

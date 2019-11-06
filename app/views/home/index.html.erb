@@ -1,1 +1,75 @@
-hello
+<div class="row">
+  
+</div>
+
+<section class="row" id="basic">
+  <div class="container x-large">
+    <h1 class="text-center text-uppercase text-white">概况</h1>
+    <hr class="star-light mb-5">
+    <div class="card intro">
+      <h3>博海日语培训中心位于常州市钟楼区 创立于2019年</h3>
+      <h3>有着独特的教学风格 环境优美 带你领略日本文化</h3>
+    </div>
+
+  </div>
+</section>
+
+<section class="row" id="teachers">
+  <div class="container x-large">
+    <%= render  'home/teachers' %>
+  </div>
+</section>
+
+<section class="row" id="courses">
+  <div class="container x-large">
+    <%= render  'home/courses' %>
+  </div>
+</section>
+
+<!-- <section class="row" id="abroad">
+  <div class="container x-large">
+    <h1 class="text-center text-uppercase text-white">留学咨询</h1>
+    <hr class="star-light mb-5">
+  </div>
+</section> -->
+
+<section class="row" id="contact">
+  <div class="container x-large">
+    <%= render  'home/contact' %>
+  </div>
+</section>
+
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function() {
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').on("click", function() {
+      var target;
+      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+        target = $(this.hash);
+        if (!target.length) {
+          target = $('[name=' + this.hash.slice(1) + ']');
+        }
+        if (target.length) {
+          console.log(target.offset().top)
+          $('html, body').animate({
+            scrollTop: (target.offset().top)
+          }, 800, "swing");
+          return false;
+        }
+      }
+    });
+    $('.js-scroll-trigger').on("click", function() {
+      return $('.navbar-collapse').collapse('hide');
+    });
+  });
+
+</script>
+
+<style type="text/css">
+  .intro {
+    padding: 20px 10px;
+  }
+  section {
+    padding: 8rem 0 3rem;
+  }
+</style>
