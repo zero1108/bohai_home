@@ -1,0 +1,3 @@
+class IncomeStatement < Statement
+	
+end

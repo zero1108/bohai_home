@@ -46,6 +46,12 @@
                     <p><%=t('activerecord.models.course')%></p>
                 <% end %>
             </li>
+            <li class="<%= controller_name == 'statements' ? 'active' : ''%>">
+                <%= link_to admin_statements_path do %>
+                    <i class="pe-7s-note2"></i>
+                    <p><%=t('activerecord.models.statement')%></p>
+                <% end %>
+            </li>
         </ul>
     </div>
 </div>

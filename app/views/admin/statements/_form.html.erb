@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="content">
+    <%= form_for([:admin, statement], local: true) do |form| %>
+      <% if statement.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(statement.errors.count, "error") %> prohibited this statement from being saved:</h2>
+
+          <ul>
+          <% statement.errors.full_messages.each do |message| %>
+            <li class="alert alert-danger"><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.label :price %>
+            <%= form.number_field :price, class: "form-control" %>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :content %>
+            <%= form.text_field :content, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= form.submit class: 'btn btn-primary btn-fill' %>
+          <%= link_to t('back'), admin_statements_path, class: 'btn btn-primary btn-fill' %>
+        </div>
+        </div>
+    <% end %>
+
+  </div>
+</div>

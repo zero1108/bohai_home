@@ -27,6 +27,7 @@ zh-CN:
       contact: 咨询
       course: 课程
       news: 新闻资讯
+      statement: 流水
       dashboard: 控制面板
     attributes:
       teacher:
@@ -50,6 +51,18 @@ zh-CN:
         name: 称呼
         grade: 日语水平
         state: 状态
+      statement:
+        type: 类型
+        content: 说明
+        price: 金额
+      income_statement:
+        type: 类型
+        content: 说明
+        price: 金额
+      outcome_statement:
+        type: 类型
+        content: 说明
+        price: 金额
     errors:
       format: "%{attribute}%{message}"
       messages:

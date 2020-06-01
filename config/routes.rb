@@ -21,5 +21,8 @@ Rails.application.routes.draw do
     resources :courses
     resources :teachers
     resources :news
+    resources :statements
+    resources :income_statements
+    resources :outcome_statements
   end
 end

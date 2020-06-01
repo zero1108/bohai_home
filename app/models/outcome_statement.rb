@@ -1,0 +1,3 @@
+class OutcomeStatement < Statement
+	
+end
