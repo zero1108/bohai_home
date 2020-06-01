@@ -20,7 +20,7 @@
                     <th><%= Contact.human_attribute_name(:name) %></th>
                     <th><%= Contact.human_attribute_name(:phone) %></th>
                     <th><%= Contact.human_attribute_name(:grade) %></th>
-                    <th><%= Contact.human_attribute_name(:content) %></th>
+                    <th><%= Contact.human_attribute_name(:target) %></th>
                     
                     <th colspan="3"><%= t('actions')%></th>
                   </thead>
@@ -30,8 +30,8 @@
                       <tr>
                         <td><%= contact.name%></td>
                         <td><%= contact.phone%></td>
-                        <td><%= contact.grade%></td>
-                        <td><%= contact.content%></td>
+                        <td><%= contact.grade_name%></td>
+                        <td><%= contact.target_name%></td>
                         <td>
                           <%= link_to t('show'), admin_contact_path(contact.id) %>
                           <%- if contact.can_deal?%>
