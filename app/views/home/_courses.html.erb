@@ -1,10 +1,9 @@
 <h1 class="text-center text-uppercase text-white">课程介绍</h1>
 <div class="courses slider">
   <% @courses.each_with_index do |course, index| %>
-	<div class="card">
+	<div class="card course-card">
 	  <h3><%= course.name%></h3>
-	  <div>参考价<span><%= course.price%></span></div>
-	  <div><%= course.introduction%></div>
+	  <div class="introduction"><%= course.introduction%></div>
 	</div>
   <% end %>
 </div>
@@ -12,9 +11,11 @@
 <style type="text/css">
 	.card {
 		margin: 0 10px;
-		padding: 5px;
+		padding: 5px 10px;
 	}
-
+	.course-card {
+		height: 175px;
+	}
 	.slick-center {
 	    h3 {
 	    	font-weight: 500;

@@ -63,5 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'state_machine'
 gem 'acts_as_enum_type'
-gem 'kaminari', '1.1.1'
+gem "kaminari", ">= 1.2.1"
 gem "ransack", github: 'activerecord-hackery/ransack'

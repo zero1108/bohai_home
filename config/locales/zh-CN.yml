@@ -7,6 +7,8 @@ zh-CN:
   back: 返回
   save: 保存
   login: 登录
+  logout: 退出登录
+  deal: 处理
   actions: 操作
   helpers:
     submit:
@@ -35,7 +37,6 @@ zh-CN:
         avatar: 头像
       course:
         name: 名称
-        price: 价格
         introduction: 介绍
         position: 顺序
         state: 状态
@@ -45,7 +46,7 @@ zh-CN:
         state: 状态
       contact:
         phone: 联系电话
-        content: 内容
+        target: 学习目标
         name: 称呼
         grade: 日语水平
         state: 状态
